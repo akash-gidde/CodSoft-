@@ -2,23 +2,53 @@
 <html>
 <head>
   <title>Online Quiz</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+    }
+    .quiz-box {
+      width: 300px;
+      margin: auto;
+    }
+    button {
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
 
-  <h1>Online Quiz</h1>
+<h1>Online Quiz</h1>
 
-  <div id="quiz">
-    <h3 id="question"></h3>
+<div class="quiz-box">
+  <p id="question"></p>
+  <button onclick="checkAnswer('a')" id="a"></button><br>
+  <button onclick="checkAnswer('b')" id="b"></button><br>
+  <button onclick="checkAnswer('c')" id="c"></button>
+</div>
 
-    <button onclick="checkAnswer(0)" id="opt0"></button>
-    <button onclick="checkAnswer(1)" id="opt1"></button>
-    <button onclick="checkAnswer(2)" id="opt2"></button>
-    <button onclick="checkAnswer(3)" id="opt3"></button>
-  </div>
+<script>
+  let q = {
+    question: "HTML stands for?",
+    a: "Hyper Text Markup Language",
+    b: "High Text Machine Language",
+    c: "Hyperlinks Text Mark Language",
+    correct: "a"
+  };
 
-  <p id="result"></p>
+  document.getElementById("question").innerText = q.question;
+  document.getElementById("a").innerText = q.a;
+  document.getElementById("b").innerText = q.b;
+  document.getElementById("c").innerText = q.c;
 
-  <script src="script.js"></script>
+  function checkAnswer(ans) {
+    if(ans === q.correct) {
+      alert("Correct Answer 🎉");
+    } else {
+      alert("Wrong Answer ❌");
+    }
+  }
+</script>
+
 </body>
 </html>
