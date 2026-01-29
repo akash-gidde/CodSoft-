@@ -6,18 +6,19 @@
 </head>
 <body>
 
-<h1>Online Quiz</h1>
+  <h1>Online Quiz</h1>
 
-<div id="quiz">
-  <p id="question"></p>
+  <div id="quiz">
+    <h3 id="question"></h3>
 
-  <button onclick="checkAnswer('a')" id="a"></button>
-  <button onclick="checkAnswer('b')" id="b"></button>
-  <button onclick="checkAnswer('c')" id="c"></button>
-</div>
+    <button onclick="checkAnswer(0)" id="opt0"></button>
+    <button onclick="checkAnswer(1)" id="opt1"></button>
+    <button onclick="checkAnswer(2)" id="opt2"></button>
+    <button onclick="checkAnswer(3)" id="opt3"></button>
+  </div>
 
-<p id="score"></p>
+  <p id="result"></p>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
