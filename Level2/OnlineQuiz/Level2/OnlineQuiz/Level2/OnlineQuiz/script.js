@@ -1,43 +1,45 @@
 const quizData = [
   {
     question: "HTML stands for?",
-    a: "Hyper Text Markup Language",
-    b: "High Text Machine Language",
-    c: "Hyperlinks and Text Markup Language",
-    correct: "a"
+    options: [
+      "Hyper Text Markup Language",
+      "High Text Machine Language",
+      "Hyperlinks Text Mark Language",
+      "None"
+    ],
+    answer: 0
   },
   {
     question: "Which language is used for styling?",
-    a: "HTML",
-    b: "CSS",
-    c: "Java",
-    correct: "b"
+    options: ["HTML", "Java", "CSS", "Python"],
+    answer: 2
   }
 ];
 
-let current = 0;
-let score = 0;
+let currentQuestion = 0;
 
-function loadQuiz() {
-  document.getElementById("question").innerText = quizData[current].question;
-  document.getElementById("a").innerText = quizData[current].a;
-  document.getElementById("b").innerText = quizData[current].b;
-  document.getElementById("c").innerText = quizData[current].c;
+function loadQuestion() {
+  const q = quizData[currentQuestion];
+  document.getElementById("question").innerText = q.question;
+  document.getElementById("opt0").innerText = q.options[0];
+  document.getElementById("opt1").innerText = q.options[1];
+  document.getElementById("opt2").innerText = q.options[2];
+  document.getElementById("opt3").innerText = q.options[3];
 }
 
-function checkAnswer(answer) {
-  if (answer === quizData[current].correct) {
-    score++;
-  }
-
-  current++;
-
-  if (current < quizData.length) {
-    loadQuiz();
+function checkAnswer(selected) {
+  if (selected === quizData[currentQuestion].answer) {
+    document.getElementById("result").innerText = "Correct!";
   } else {
-    document.getElementById("quiz").innerHTML =
-      `<h2>Quiz Finished</h2><p>Your Score: ${score}</p>`;
+    document.getElementById("result").innerText = "Wrong!";
+  }
+
+  currentQuestion++;
+  if (currentQuestion < quizData.length) {
+    setTimeout(loadQuestion, 1000);
+  } else {
+    document.getElementById("result").innerText += " Quiz Completed!";
   }
 }
 
-loadQuiz();
+loadQuestion();
