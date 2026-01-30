@@ -1,18 +1,21 @@
 function addTask() {
-  let taskInput = document.getElementById("taskInput");
-  let taskText = taskInput.value;
+  let input = document.getElementById("taskInput");
+  let task = input.value;
 
-  if (taskText === "") return;
+  if (task === "") {
+    alert("Enter task");
+    return;
+  }
 
   let li = document.createElement("li");
   li.innerHTML = `
-    ${taskText}
+    ${task}
     <button onclick="completeTask(this)">Done</button>
     <button onclick="deleteTask(this)">Delete</button>
   `;
 
   document.getElementById("taskList").appendChild(li);
-  taskInput.value = "";
+  input.value = "";
 }
 
 function completeTask(btn) {
