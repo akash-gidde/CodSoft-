@@ -1,3 +1,4 @@
+
 function appendValue(value) {
   document.getElementById("result").value += value;
 }
