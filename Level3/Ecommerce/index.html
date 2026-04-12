@@ -1,32 +1,40 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>E-Commerce Website</title>
+  <title>E-Commerce</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Simple E-Commerce Website</h1>
+  <h1>My Store</h1>
 
-<div class="products">
+  <div class="products">
 
-  <div class="product">
-    <h3>Mobile</h3>
-    <p>Price: ₹10000</p>
-    <button onclick="addToCart(10000)">Add to Cart</button>
+    <div class="product">
+      <h3>Product 1</h3>
+      <p>Price: ₹100</p>
+      <button onclick="addToCart('Product 1')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <h3>Product 2</h3>
+      <p>Price: ₹200</p>
+      <button onclick="addToCart('Product 2')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <h3>Product 3</h3>
+      <p>Price: ₹300</p>
+      <button onclick="addToCart('Product 3')">Add to Cart</button>
+    </div>
+
   </div>
 
-  <div class="product">
-    <h3>Laptop</h3>
-    <p>Price: ₹40000</p>
-    <button onclick="addToCart(40000)">Add to Cart</button>
-  </div>
+  <h2>Cart</h2>
+  <div id="cart"></div>
 
-</div>
-
-<h2>Cart Total: ₹<span id="total">0</span></h2>
-<h3>Cart Total: ₹<span id="total">0</span></h3>
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
